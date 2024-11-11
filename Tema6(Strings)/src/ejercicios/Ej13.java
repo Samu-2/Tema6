@@ -2,19 +2,19 @@ package ejercicios;
 
 import java.util.Scanner;
 
-public class Ej11 {
+public class Ej13 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int opcion = 0;
 	
 		String frase = dimeCadenaTexto("Introduce una frase", sc);
-String letra=dimeCadenaTexto("Introduce una letra", sc);
+        String letra=dimeCadenaTexto("Introduce una letra", sc);
 		do {
 
-			System.out.println("\n1.Veces\n2.Primera Aparici髇\n3.Ultima aparici髇\n0.Salir");
+			System.out.println("\n1.Veces\n2.Primera Aparici贸n\n3.Ultima aparici贸n\n0.Salir");
 
-			opcion = dimeEntero("Elige una opci髇", sc);
+			opcion = dimeEntero("Elige una opci贸n", sc);
 
 			switch (opcion) {
 			case 1:
@@ -22,16 +22,18 @@ String letra=dimeCadenaTexto("Introduce una letra", sc);
 				System.out.println("La letra: "+letra+" se repite "+veces+" veces");
 				break;
 			case 2:
-				
+				int posicionLetra=posicionLetraPrimeraVez(frase, letra);
+				System.out.println(posicionLetra);
 				break;
 			case 3:
-			
+			int posicionLetraUltimaVez= posicionLetraUltimaVez(frase, letra);
+			System.out.println(posicionLetraUltimaVez);
 				break;
 
 			case 0:
 				break;
 			default:
-				System.out.println("Opci髇 no valida");
+				System.out.println("Opci贸n no valida");
 			}
 
 		} while (opcion != 0);
@@ -48,7 +50,7 @@ String letra=dimeCadenaTexto("Introduce una letra", sc);
 				return num;
 			} catch (Exception e) {
 				// TODO: handle exception
-				System.out.println("Introduce un n鷐ero,no letras");
+				System.out.println("Introduce un n煤mero,no letras");
 			}
 
 		} while (true);
@@ -86,15 +88,25 @@ String letra=dimeCadenaTexto("Introduce una letra", sc);
 
 
 	}
-	//public static int posicionLetraPrimeraVez(String frase,String letra) {
-		//int n=numVecesLetra(frase, letra);
-		//if(n>0)
-	///	for(int i=0;i<frase.length();i++)
-		{
-			
-		
+	public static int posicionLetraPrimeraVez(String frase,String letra) {
+		int n=numVecesLetra(frase, letra);
+		int pos=0;
+		if(n>0)
+			 pos = frase.indexOf(letra);
+			return pos; 
+					
 	
-		}
 		
 	}
+	public static int posicionLetraUltimaVez(String frase,String letra) {
+		int n=numVecesLetra(frase, letra);
+		int pos=0;
+		if(n>0)
+			 pos = frase.lastIndexOf(letra);
+			return pos; 
+					
+	
+		
+	}
+}
 
