@@ -13,19 +13,19 @@ public class Ej10 {
 
 		do {
 
-			System.out.println("\n1.Subcadena\n 2.Remplazo\n 3.Impares \n0.Salir");
+			System.out.println("\n1.Subcadena\n2.Remplazo\n3.Impares \n0.Salir");
 
 			opcion = dimeEntero("Elige una opción", sc);
 
 			switch (opcion) {
 			case 1:
 				System.out.println(subcadena(num1, num2, cadena, sc));
-
+				break;
 			case 2:
-				System.out.println();
+				System.out.println(reemplazo(cadena));
 				break;
 			case 3:
-				System.out.println();
+				System.out.println(letrasImpares(cadena));
 				break;
 
 			case 0:
@@ -80,12 +80,29 @@ public class Ej10 {
 
 		return cadena.substring(num1, num2);
 	}
-//crear funcion que devuelva las 2 primeras letras
-	//public static String reemplazo(String cadena) {
-		//int lenCadena = cadena.length();
-		//if (lenCadena > 10) {
 
-			
-		
+	public static String reemplazo(String cadena) {
+		int lenCadena = cadena.length();
+		String dosLetras = null;
+		String dosLetrasEn0 = null;
+		String cadenaSin0 = null;
+		if (lenCadena > 10) {
+			dosLetras = Funciones.dosPrimerasLetras2(cadena);
+			dosLetrasEn0 = dosLetras.replaceAll(dosLetras, "00");
+			cadenaSin0 = cadena.substring(2);
+
+		}
+		return dosLetrasEn0 + cadenaSin0;
 	}
 
+	public static String letrasImpares(String cadena) {
+		String cadenaImpar = "";
+		for (int i = 0; i < cadena.length(); i++) {
+			if (!(i % 2 == 0))
+				cadenaImpar += cadena.substring(i, i + 1);
+		}
+
+		return cadenaImpar;
+	}
+
+}

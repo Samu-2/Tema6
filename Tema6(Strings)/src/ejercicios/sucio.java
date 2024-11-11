@@ -14,15 +14,15 @@ System.out.println(llegadaNuevaYork);
 
 
 String cadena = "Hola buenos días";
+ String dosLetras=Funciones.dosPrimerasLetras(cadena);
+ 
+ System.out.println(dosLetras);
+ String c = cadena.substring(0,2);
+
+ System.out.println(c);
 
 
-for (int i = 0; i < cadena.length(); i++) {
-	if(i==1) {
-	System.out.println(cadena.substring(i)); 
-}else
-	System.out.println("na");
 }
-	}
 }
 //System.out.println(s.substring(i,i+1));		//con substring tendríamos un String
 
