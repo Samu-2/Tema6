@@ -12,9 +12,9 @@ public class Ej13 {
         String letra=dimeCadenaTexto("Introduce una letra", sc);
 		do {
 
-			System.out.println("\n1.Veces\n2.Primera Aparici贸n\n3.Ultima aparici贸n\n0.Salir");
+			System.out.println("\n1.Veces\n2.Primera Aparici髇\n3.Ultima aparici髇\n0.Salir");
 
-			opcion = dimeEntero("Elige una opci贸n", sc);
+			opcion = dimeEntero("Elige una opci髇", sc);
 
 			switch (opcion) {
 			case 1:
@@ -23,17 +23,17 @@ public class Ej13 {
 				break;
 			case 2:
 				int posicionLetra=posicionLetraPrimeraVez(frase, letra);
-				System.out.println(posicionLetra);
+				System.out.println("La letra "+letra+ "aparece por primera vez en la posici髇 "+posicionLetra);
 				break;
 			case 3:
 			int posicionLetraUltimaVez= posicionLetraUltimaVez(frase, letra);
-			System.out.println(posicionLetraUltimaVez);
+			System.out.println("La letra "+letra+ "aparece por ultima vez en la posici髇 "+posicionLetraUltimaVez);
 				break;
 
 			case 0:
 				break;
 			default:
-				System.out.println("Opci贸n no valida");
+				System.out.println("Opci髇 no valida");
 			}
 
 		} while (opcion != 0);
@@ -74,7 +74,7 @@ public class Ej13 {
 
 	public static int numVecesLetra(String frase, String letra) {
 		int cont=0;
-		for(int i=0;i<frase.length();i++)
+		for(int i=0;i<=frase.length();i++)
 		{
 			
 		
